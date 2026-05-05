@@ -1,0 +1,11 @@
+{% extends "notes/base.html" %}
+
+{% block content %}
+<h1>Primeiro semestre</h1>
+
+<ul>
+{% for mes in 'meses' %}
+<li>{{ mes }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

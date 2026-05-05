@@ -1,0 +1,7 @@
+<body>
+  {% if user.is_authenticated %}
+  {{ user.first_name }}
+  {% endif %}
+  
+  {% block content %} {% endblock %}
+</body>

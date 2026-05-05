@@ -1,0 +1,4 @@
+difficulty: 2
+weight: 1
+testFile: test_django.py
+studentFile: app_principal/views.py

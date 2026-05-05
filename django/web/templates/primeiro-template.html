@@ -1,0 +1,16 @@
+<h1>Get-it</h1>
+
+<ul>
+  {# Percorre todas as anotações #}
+  {% for note in notes %}
+
+  {# Cria um item da lista com o título da anotação atual #}
+  <li>{{ note.title }}</li>
+
+  {% empty %}
+
+  {# Se notes estiver vazio, criamos o elemento abaixo #}
+  <li>Nenhuma anotação por enquanto.</li>
+
+  {% endfor %}
+</ul>

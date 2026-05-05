@@ -1,0 +1,4 @@
+difficulty: 2
+weight: 1
+testFile: test_django.py
+studentFile: produtos/models.py
