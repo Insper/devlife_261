@@ -1,0 +1,42 @@
+{% extends "notes/base.html" %}
+
+{% block content %}
+  <section class="note-form" aria-labelledby="form-title">
+    <h1 id="form-title">Minhas anotações</h1>
+
+    <form method="post" action="{% url 'index' %}">
+      {% csrf_token %}
+
+      <label for="titulo">Título</label>
+      <input id="titulo" type="text" name="titulo" maxlength="200" required>
+
+      <label for="detalhes">Detalhes</label>
+      <textarea id="detalhes" name="detalhes" rows="5" required></textarea>
+
+      <button type="submit">Criar anotação</button>
+    </form>
+  </section>
+
+  <section class="notes-list" aria-labelledby="notes-title">
+    <h2 id="notes-title">Notas salvas</h2>
+
+    <ul>
+      {% for note in notes %}
+        <li>
+          <article>
+            <div>
+              <h3>{{ note.title }}</h3>
+              <time datetime="{{ note.created_at|date:'c' }}">
+                {{ note.created_at|date:"d/m/Y H:i" }}
+              </time>
+            </div>
+            <p>{{ note.content }}</p>
+            <a href="{% url 'delete-note' note.id %}">Apagar</a>
+          </article>
+        </li>
+      {% empty %}
+        <li class="empty">Nenhuma anotação encontrada.</li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "notes/base.html" %}
+
+{% block content %}
+  <section class="login-panel" aria-labelledby="login-title">
+    <h1 id="login-title">Entrar no Get-it</h1>
+
+    {% if form.errors %}
+      <p class="error">Usuário ou senha inválidos.</p>
+    {% endif %}
+
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Entrar</button>
+    </form>
+  </section>
+{% endblock %}

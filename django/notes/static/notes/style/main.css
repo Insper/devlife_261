@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #1f2933;
+  background: #f4f7f5;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: #0f766e;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 4rem;
+  padding: 0.75rem max(1rem, calc((100vw - 960px) / 2));
+  background: #ffffff;
+  border-bottom: 1px solid #d6e0dc;
+}
+
+.brand {
+  color: #0f3d3e;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.page {
+  width: min(960px, calc(100% - 2rem));
+  margin: 2rem auto;
+}
+
+.note-form,
+.login-panel {
+  max-width: 620px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  color: #102a43;
+}
+
+h1 {
+  margin-bottom: 1.25rem;
+  font-size: 2rem;
+}
+
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+form {
+  display: grid;
+  gap: 0.65rem;
+}
+
+label {
+  font-weight: 700;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  color: #1f2933;
+  border: 1px solid #b8c8c2;
+  border-radius: 6px;
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button,
+.notes-list a {
+  width: fit-content;
+  padding: 0.65rem 0.9rem;
+  border: 0;
+  border-radius: 6px;
+  background: #0f766e;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:hover,
+.notes-list a:hover {
+  background: #115e59;
+}
+
+.notes-list ul {
+  display: grid;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.notes-list article,
+.empty,
+.login-panel {
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid #d6e0dc;
+  border-radius: 8px;
+}
+
+.notes-list article {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.notes-list article > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.notes-list p {
+  margin: 0;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+time {
+  color: #52616b;
+  font-size: 0.9rem;
+}
+
+.error {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .topbar,
+  .user-actions,
+  .notes-list article > div {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

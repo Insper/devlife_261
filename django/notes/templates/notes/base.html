@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get-it</title>
+  <link rel="stylesheet" href="{% static 'notes/style/main.css' %}">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="{% url 'index' %}">Get-it</a>
+
+    {% if user.is_authenticated %}
+      <div class="user-actions">
+        <span>Olá, {{ user.first_name|default:user.username }}</span>
+        <form method="post" action="{% url 'logout' %}">
+          {% csrf_token %}
+          <button type="submit">Sair</button>
+        </form>
+      </div>
+    {% endif %}
+  </header>
+
+  <main class="page">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
